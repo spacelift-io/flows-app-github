@@ -1,0 +1,285 @@
+{
+  "oneOf": [
+    {
+      "description": "A list of directory items",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": ["dir", "file", "submodule", "symlink"]
+          },
+          "size": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          },
+          "content": {
+            "type": "string"
+          },
+          "sha": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "gitUrl": {
+            "type": "string"
+          },
+          "htmlUrl": {
+            "type": "string"
+          },
+          "downloadUrl": {
+            "type": "string"
+          },
+          "Links": {
+            "type": "object",
+            "properties": {
+              "git": {
+                "type": "string"
+              },
+              "html": {
+                "type": "string"
+              },
+              "self": {
+                "type": "string"
+              }
+            },
+            "required": ["git", "html", "self"]
+          }
+        },
+        "required": [
+          "_links",
+          "git_url",
+          "html_url",
+          "download_url",
+          "name",
+          "path",
+          "sha",
+          "size",
+          "type",
+          "url"
+        ]
+      }
+    },
+    {
+      "description": "Content File",
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["file"]
+        },
+        "encoding": {
+          "type": "string"
+        },
+        "size": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "path": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        },
+        "sha": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        },
+        "gitUrl": {
+          "type": "string"
+        },
+        "htmlUrl": {
+          "type": "string"
+        },
+        "downloadUrl": {
+          "type": "string"
+        },
+        "Links": {
+          "type": "object",
+          "properties": {
+            "git": {
+              "type": "string"
+            },
+            "html": {
+              "type": "string"
+            },
+            "self": {
+              "type": "string"
+            }
+          },
+          "required": ["git", "html", "self"]
+        },
+        "target": {
+          "type": "string"
+        },
+        "submoduleGitUrl": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "_links",
+        "git_url",
+        "html_url",
+        "download_url",
+        "name",
+        "path",
+        "sha",
+        "size",
+        "type",
+        "url",
+        "content",
+        "encoding"
+      ]
+    },
+    {
+      "description": "An object describing a symlink",
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["symlink"]
+        },
+        "target": {
+          "type": "string"
+        },
+        "size": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "path": {
+          "type": "string"
+        },
+        "sha": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        },
+        "gitUrl": {
+          "type": "string"
+        },
+        "htmlUrl": {
+          "type": "string"
+        },
+        "downloadUrl": {
+          "type": "string"
+        },
+        "Links": {
+          "type": "object",
+          "properties": {
+            "git": {
+              "type": "string"
+            },
+            "html": {
+              "type": "string"
+            },
+            "self": {
+              "type": "string"
+            }
+          },
+          "required": ["git", "html", "self"]
+        }
+      },
+      "required": [
+        "_links",
+        "git_url",
+        "html_url",
+        "download_url",
+        "name",
+        "path",
+        "sha",
+        "size",
+        "type",
+        "url",
+        "target"
+      ]
+    },
+    {
+      "description": "An object describing a submodule",
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["submodule"]
+        },
+        "submoduleGitUrl": {
+          "type": "string"
+        },
+        "size": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "path": {
+          "type": "string"
+        },
+        "sha": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        },
+        "gitUrl": {
+          "type": "string"
+        },
+        "htmlUrl": {
+          "type": "string"
+        },
+        "downloadUrl": {
+          "type": "string"
+        },
+        "Links": {
+          "type": "object",
+          "properties": {
+            "git": {
+              "type": "string"
+            },
+            "html": {
+              "type": "string"
+            },
+            "self": {
+              "type": "string"
+            }
+          },
+          "required": ["git", "html", "self"]
+        }
+      },
+      "required": [
+        "_links",
+        "git_url",
+        "html_url",
+        "download_url",
+        "name",
+        "path",
+        "sha",
+        "size",
+        "type",
+        "url",
+        "submodule_git_url"
+      ]
+    }
+  ],
+  "discriminator": {
+    "propertyName": "type",
+    "mapping": {
+      "array": "#/components/schemas/content-directory",
+      "file": "#/components/schemas/content-file",
+      "symlink": "#/components/schemas/content-symlink",
+      "submodule": "#/components/schemas/content-submodule"
+    }
+  }
+}

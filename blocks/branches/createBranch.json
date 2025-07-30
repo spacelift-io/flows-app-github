@@ -1,0 +1,32 @@
+{
+  "description": "Git references within a repository",
+  "type": "object",
+  "properties": {
+    "ref": {
+      "type": "string"
+    },
+    "nodeId": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "object": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "sha": {
+          "description": "SHA for the reference",
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "required": ["type", "sha", "url"]
+    }
+  },
+  "required": ["ref", "node_id", "url", "object"]
+}

@@ -1,0 +1,1482 @@
+{
+  "type": "array",
+  "items": {
+    "description": "Short Branch",
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string"
+      },
+      "commit": {
+        "type": "object",
+        "properties": {
+          "sha": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          }
+        },
+        "required": ["sha", "url"]
+      },
+      "protected": {
+        "type": "boolean"
+      },
+      "protection": {
+        "description": "Branch Protection",
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string"
+          },
+          "enabled": {
+            "type": "boolean"
+          },
+          "requiredStatusChecks": {
+            "description": "Protected Branch Required Status Check",
+            "type": "object",
+            "properties": {
+              "url": {
+                "type": "string"
+              },
+              "enforcementLevel": {
+                "type": "string"
+              },
+              "contexts": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "checks": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "context": {
+                      "type": "string"
+                    },
+                    "appId": {
+                      "type": "integer"
+                    }
+                  },
+                  "required": ["context", "app_id"]
+                }
+              },
+              "contextsUrl": {
+                "type": "string"
+              },
+              "strict": {
+                "type": "boolean"
+              }
+            },
+            "required": ["contexts", "checks"]
+          },
+          "enforceAdmins": {
+            "description": "Protected Branch Admin Enforced",
+            "type": "object",
+            "properties": {
+              "url": {
+                "type": "string"
+              },
+              "enabled": {
+                "type": "boolean"
+              }
+            },
+            "required": ["url", "enabled"]
+          },
+          "requiredPullRequestReviews": {
+            "description": "Protected Branch Pull Request Review",
+            "type": "object",
+            "properties": {
+              "url": {
+                "type": "string"
+              },
+              "dismissalRestrictions": {
+                "type": "object",
+                "properties": {
+                  "users": {
+                    "description": "The list of users with review dismissal access.",
+                    "type": "array",
+                    "items": {
+                      "description": "A GitHub user.",
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "email": {
+                          "type": "string"
+                        },
+                        "login": {
+                          "type": "string"
+                        },
+                        "id": {
+                          "type": "integer"
+                        },
+                        "nodeId": {
+                          "type": "string"
+                        },
+                        "avatarUrl": {
+                          "type": "string"
+                        },
+                        "gravatarId": {
+                          "type": "string"
+                        },
+                        "url": {
+                          "type": "string"
+                        },
+                        "htmlUrl": {
+                          "type": "string"
+                        },
+                        "followersUrl": {
+                          "type": "string"
+                        },
+                        "followingUrl": {
+                          "type": "string"
+                        },
+                        "gistsUrl": {
+                          "type": "string"
+                        },
+                        "starredUrl": {
+                          "type": "string"
+                        },
+                        "subscriptionsUrl": {
+                          "type": "string"
+                        },
+                        "organizationsUrl": {
+                          "type": "string"
+                        },
+                        "reposUrl": {
+                          "type": "string"
+                        },
+                        "eventsUrl": {
+                          "type": "string"
+                        },
+                        "receivedEventsUrl": {
+                          "type": "string"
+                        },
+                        "type": {
+                          "type": "string"
+                        },
+                        "siteAdmin": {
+                          "type": "boolean"
+                        },
+                        "starredAt": {
+                          "type": "string"
+                        },
+                        "userViewType": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "avatar_url",
+                        "events_url",
+                        "followers_url",
+                        "following_url",
+                        "gists_url",
+                        "gravatar_id",
+                        "html_url",
+                        "id",
+                        "node_id",
+                        "login",
+                        "organizations_url",
+                        "received_events_url",
+                        "repos_url",
+                        "site_admin",
+                        "starred_url",
+                        "subscriptions_url",
+                        "type",
+                        "url"
+                      ]
+                    }
+                  },
+                  "teams": {
+                    "description": "The list of teams with review dismissal access.",
+                    "type": "array",
+                    "items": {
+                      "description": "Groups of organization members that gives permissions on specified repositories.",
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "integer"
+                        },
+                        "nodeId": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "slug": {
+                          "type": "string"
+                        },
+                        "description": {
+                          "type": "string"
+                        },
+                        "privacy": {
+                          "type": "string"
+                        },
+                        "notificationSetting": {
+                          "type": "string"
+                        },
+                        "permission": {
+                          "type": "string"
+                        },
+                        "permissions": {
+                          "type": "object",
+                          "properties": {
+                            "pull": {
+                              "type": "boolean"
+                            },
+                            "triage": {
+                              "type": "boolean"
+                            },
+                            "push": {
+                              "type": "boolean"
+                            },
+                            "maintain": {
+                              "type": "boolean"
+                            },
+                            "admin": {
+                              "type": "boolean"
+                            }
+                          },
+                          "required": [
+                            "pull",
+                            "triage",
+                            "push",
+                            "maintain",
+                            "admin"
+                          ]
+                        },
+                        "url": {
+                          "type": "string"
+                        },
+                        "htmlUrl": {
+                          "type": "string"
+                        },
+                        "membersUrl": {
+                          "type": "string"
+                        },
+                        "repositoriesUrl": {
+                          "type": "string"
+                        },
+                        "parent": {
+                          "description": "Groups of organization members that gives permissions on specified repositories.",
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "description": "Unique identifier of the team",
+                              "type": "integer"
+                            },
+                            "nodeId": {
+                              "type": "string"
+                            },
+                            "url": {
+                              "description": "URL for the team",
+                              "type": "string"
+                            },
+                            "membersUrl": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "description": "Name of the team",
+                              "type": "string"
+                            },
+                            "description": {
+                              "description": "Description of the team",
+                              "type": "string"
+                            },
+                            "permission": {
+                              "description": "Permission that the team will have for its repositories",
+                              "type": "string"
+                            },
+                            "privacy": {
+                              "description": "The level of privacy this team should have",
+                              "type": "string"
+                            },
+                            "notificationSetting": {
+                              "description": "The notification setting the team has set",
+                              "type": "string"
+                            },
+                            "htmlUrl": {
+                              "type": "string"
+                            },
+                            "repositoriesUrl": {
+                              "type": "string"
+                            },
+                            "slug": {
+                              "type": "string"
+                            },
+                            "ldapDn": {
+                              "description": "Distinguished Name (DN) that team maps to within LDAP environment",
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "id",
+                            "node_id",
+                            "url",
+                            "members_url",
+                            "name",
+                            "description",
+                            "permission",
+                            "html_url",
+                            "repositories_url",
+                            "slug"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "node_id",
+                        "url",
+                        "members_url",
+                        "name",
+                        "description",
+                        "permission",
+                        "html_url",
+                        "repositories_url",
+                        "slug",
+                        "parent"
+                      ]
+                    }
+                  },
+                  "apps": {
+                    "description": "The list of apps with review dismissal access.",
+                    "type": "array",
+                    "items": {
+                      "description": "GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.",
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "description": "Unique identifier of the GitHub app",
+                          "type": "integer"
+                        },
+                        "slug": {
+                          "description": "The slug name of the GitHub app",
+                          "type": "string"
+                        },
+                        "nodeId": {
+                          "type": "string"
+                        },
+                        "clientId": {
+                          "type": "string"
+                        },
+                        "owner": {
+                          "oneOf": [
+                            {
+                              "description": "A GitHub user.",
+                              "type": "object",
+                              "properties": {
+                                "name": {
+                                  "type": "string"
+                                },
+                                "email": {
+                                  "type": "string"
+                                },
+                                "login": {
+                                  "type": "string"
+                                },
+                                "id": {
+                                  "type": "integer"
+                                },
+                                "nodeId": {
+                                  "type": "string"
+                                },
+                                "avatarUrl": {
+                                  "type": "string"
+                                },
+                                "gravatarId": {
+                                  "type": "string"
+                                },
+                                "url": {
+                                  "type": "string"
+                                },
+                                "htmlUrl": {
+                                  "type": "string"
+                                },
+                                "followersUrl": {
+                                  "type": "string"
+                                },
+                                "followingUrl": {
+                                  "type": "string"
+                                },
+                                "gistsUrl": {
+                                  "type": "string"
+                                },
+                                "starredUrl": {
+                                  "type": "string"
+                                },
+                                "subscriptionsUrl": {
+                                  "type": "string"
+                                },
+                                "organizationsUrl": {
+                                  "type": "string"
+                                },
+                                "reposUrl": {
+                                  "type": "string"
+                                },
+                                "eventsUrl": {
+                                  "type": "string"
+                                },
+                                "receivedEventsUrl": {
+                                  "type": "string"
+                                },
+                                "type": {
+                                  "type": "string"
+                                },
+                                "siteAdmin": {
+                                  "type": "boolean"
+                                },
+                                "starredAt": {
+                                  "type": "string"
+                                },
+                                "userViewType": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "avatar_url",
+                                "events_url",
+                                "followers_url",
+                                "following_url",
+                                "gists_url",
+                                "gravatar_id",
+                                "html_url",
+                                "id",
+                                "node_id",
+                                "login",
+                                "organizations_url",
+                                "received_events_url",
+                                "repos_url",
+                                "site_admin",
+                                "starred_url",
+                                "subscriptions_url",
+                                "type",
+                                "url"
+                              ]
+                            },
+                            {
+                              "description": "An enterprise on GitHub.",
+                              "type": "object",
+                              "properties": {
+                                "description": {
+                                  "description": "A short description of the enterprise.",
+                                  "type": "string"
+                                },
+                                "htmlUrl": {
+                                  "type": "string"
+                                },
+                                "websiteUrl": {
+                                  "description": "The enterprise's website URL.",
+                                  "type": "string"
+                                },
+                                "id": {
+                                  "description": "Unique identifier of the enterprise",
+                                  "type": "integer"
+                                },
+                                "nodeId": {
+                                  "type": "string"
+                                },
+                                "name": {
+                                  "description": "The name of the enterprise.",
+                                  "type": "string"
+                                },
+                                "slug": {
+                                  "description": "The slug url identifier for the enterprise.",
+                                  "type": "string"
+                                },
+                                "createdAt": {
+                                  "type": "string"
+                                },
+                                "updatedAt": {
+                                  "type": "string"
+                                },
+                                "avatarUrl": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "id",
+                                "node_id",
+                                "name",
+                                "slug",
+                                "html_url",
+                                "created_at",
+                                "updated_at",
+                                "avatar_url"
+                              ]
+                            }
+                          ]
+                        },
+                        "name": {
+                          "description": "The name of the GitHub app",
+                          "type": "string"
+                        },
+                        "description": {
+                          "type": "string"
+                        },
+                        "externalUrl": {
+                          "type": "string"
+                        },
+                        "htmlUrl": {
+                          "type": "string"
+                        },
+                        "createdAt": {
+                          "type": "string"
+                        },
+                        "updatedAt": {
+                          "type": "string"
+                        },
+                        "permissions": {
+                          "description": "The set of permissions for the GitHub app",
+                          "type": "object",
+                          "properties": {
+                            "issues": {
+                              "type": "string"
+                            },
+                            "checks": {
+                              "type": "string"
+                            },
+                            "metadata": {
+                              "type": "string"
+                            },
+                            "contents": {
+                              "type": "string"
+                            },
+                            "deployments": {
+                              "type": "string"
+                            }
+                          },
+                          "additionalProperties": {
+                            "type": "string"
+                          }
+                        },
+                        "events": {
+                          "description": "The list of events for the GitHub app",
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "installationsCount": {
+                          "description": "The number of installations associated with the GitHub app",
+                          "type": "integer"
+                        },
+                        "clientSecret": {
+                          "type": "string"
+                        },
+                        "webhookSecret": {
+                          "type": "string"
+                        },
+                        "pem": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "node_id",
+                        "owner",
+                        "name",
+                        "description",
+                        "external_url",
+                        "html_url",
+                        "created_at",
+                        "updated_at",
+                        "permissions",
+                        "events"
+                      ]
+                    }
+                  },
+                  "url": {
+                    "type": "string"
+                  },
+                  "usersUrl": {
+                    "type": "string"
+                  },
+                  "teamsUrl": {
+                    "type": "string"
+                  }
+                }
+              },
+              "bypassPullRequestAllowances": {
+                "type": "object",
+                "description": "Allow specific users, teams, or apps to bypass pull request requirements.",
+                "properties": {
+                  "users": {
+                    "description": "The list of users allowed to bypass pull request requirements.",
+                    "type": "array",
+                    "items": {
+                      "description": "A GitHub user.",
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "email": {
+                          "type": "string"
+                        },
+                        "login": {
+                          "type": "string"
+                        },
+                        "id": {
+                          "type": "integer"
+                        },
+                        "nodeId": {
+                          "type": "string"
+                        },
+                        "avatarUrl": {
+                          "type": "string"
+                        },
+                        "gravatarId": {
+                          "type": "string"
+                        },
+                        "url": {
+                          "type": "string"
+                        },
+                        "htmlUrl": {
+                          "type": "string"
+                        },
+                        "followersUrl": {
+                          "type": "string"
+                        },
+                        "followingUrl": {
+                          "type": "string"
+                        },
+                        "gistsUrl": {
+                          "type": "string"
+                        },
+                        "starredUrl": {
+                          "type": "string"
+                        },
+                        "subscriptionsUrl": {
+                          "type": "string"
+                        },
+                        "organizationsUrl": {
+                          "type": "string"
+                        },
+                        "reposUrl": {
+                          "type": "string"
+                        },
+                        "eventsUrl": {
+                          "type": "string"
+                        },
+                        "receivedEventsUrl": {
+                          "type": "string"
+                        },
+                        "type": {
+                          "type": "string"
+                        },
+                        "siteAdmin": {
+                          "type": "boolean"
+                        },
+                        "starredAt": {
+                          "type": "string"
+                        },
+                        "userViewType": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "avatar_url",
+                        "events_url",
+                        "followers_url",
+                        "following_url",
+                        "gists_url",
+                        "gravatar_id",
+                        "html_url",
+                        "id",
+                        "node_id",
+                        "login",
+                        "organizations_url",
+                        "received_events_url",
+                        "repos_url",
+                        "site_admin",
+                        "starred_url",
+                        "subscriptions_url",
+                        "type",
+                        "url"
+                      ]
+                    }
+                  },
+                  "teams": {
+                    "description": "The list of teams allowed to bypass pull request requirements.",
+                    "type": "array",
+                    "items": {
+                      "description": "Groups of organization members that gives permissions on specified repositories.",
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "integer"
+                        },
+                        "nodeId": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "slug": {
+                          "type": "string"
+                        },
+                        "description": {
+                          "type": "string"
+                        },
+                        "privacy": {
+                          "type": "string"
+                        },
+                        "notificationSetting": {
+                          "type": "string"
+                        },
+                        "permission": {
+                          "type": "string"
+                        },
+                        "permissions": {
+                          "type": "object",
+                          "properties": {
+                            "pull": {
+                              "type": "boolean"
+                            },
+                            "triage": {
+                              "type": "boolean"
+                            },
+                            "push": {
+                              "type": "boolean"
+                            },
+                            "maintain": {
+                              "type": "boolean"
+                            },
+                            "admin": {
+                              "type": "boolean"
+                            }
+                          },
+                          "required": [
+                            "pull",
+                            "triage",
+                            "push",
+                            "maintain",
+                            "admin"
+                          ]
+                        },
+                        "url": {
+                          "type": "string"
+                        },
+                        "htmlUrl": {
+                          "type": "string"
+                        },
+                        "membersUrl": {
+                          "type": "string"
+                        },
+                        "repositoriesUrl": {
+                          "type": "string"
+                        },
+                        "parent": {
+                          "description": "Groups of organization members that gives permissions on specified repositories.",
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "description": "Unique identifier of the team",
+                              "type": "integer"
+                            },
+                            "nodeId": {
+                              "type": "string"
+                            },
+                            "url": {
+                              "description": "URL for the team",
+                              "type": "string"
+                            },
+                            "membersUrl": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "description": "Name of the team",
+                              "type": "string"
+                            },
+                            "description": {
+                              "description": "Description of the team",
+                              "type": "string"
+                            },
+                            "permission": {
+                              "description": "Permission that the team will have for its repositories",
+                              "type": "string"
+                            },
+                            "privacy": {
+                              "description": "The level of privacy this team should have",
+                              "type": "string"
+                            },
+                            "notificationSetting": {
+                              "description": "The notification setting the team has set",
+                              "type": "string"
+                            },
+                            "htmlUrl": {
+                              "type": "string"
+                            },
+                            "repositoriesUrl": {
+                              "type": "string"
+                            },
+                            "slug": {
+                              "type": "string"
+                            },
+                            "ldapDn": {
+                              "description": "Distinguished Name (DN) that team maps to within LDAP environment",
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "id",
+                            "node_id",
+                            "url",
+                            "members_url",
+                            "name",
+                            "description",
+                            "permission",
+                            "html_url",
+                            "repositories_url",
+                            "slug"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "node_id",
+                        "url",
+                        "members_url",
+                        "name",
+                        "description",
+                        "permission",
+                        "html_url",
+                        "repositories_url",
+                        "slug",
+                        "parent"
+                      ]
+                    }
+                  },
+                  "apps": {
+                    "description": "The list of apps allowed to bypass pull request requirements.",
+                    "type": "array",
+                    "items": {
+                      "description": "GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.",
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "description": "Unique identifier of the GitHub app",
+                          "type": "integer"
+                        },
+                        "slug": {
+                          "description": "The slug name of the GitHub app",
+                          "type": "string"
+                        },
+                        "nodeId": {
+                          "type": "string"
+                        },
+                        "clientId": {
+                          "type": "string"
+                        },
+                        "owner": {
+                          "oneOf": [
+                            {
+                              "description": "A GitHub user.",
+                              "type": "object",
+                              "properties": {
+                                "name": {
+                                  "type": "string"
+                                },
+                                "email": {
+                                  "type": "string"
+                                },
+                                "login": {
+                                  "type": "string"
+                                },
+                                "id": {
+                                  "type": "integer"
+                                },
+                                "nodeId": {
+                                  "type": "string"
+                                },
+                                "avatarUrl": {
+                                  "type": "string"
+                                },
+                                "gravatarId": {
+                                  "type": "string"
+                                },
+                                "url": {
+                                  "type": "string"
+                                },
+                                "htmlUrl": {
+                                  "type": "string"
+                                },
+                                "followersUrl": {
+                                  "type": "string"
+                                },
+                                "followingUrl": {
+                                  "type": "string"
+                                },
+                                "gistsUrl": {
+                                  "type": "string"
+                                },
+                                "starredUrl": {
+                                  "type": "string"
+                                },
+                                "subscriptionsUrl": {
+                                  "type": "string"
+                                },
+                                "organizationsUrl": {
+                                  "type": "string"
+                                },
+                                "reposUrl": {
+                                  "type": "string"
+                                },
+                                "eventsUrl": {
+                                  "type": "string"
+                                },
+                                "receivedEventsUrl": {
+                                  "type": "string"
+                                },
+                                "type": {
+                                  "type": "string"
+                                },
+                                "siteAdmin": {
+                                  "type": "boolean"
+                                },
+                                "starredAt": {
+                                  "type": "string"
+                                },
+                                "userViewType": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "avatar_url",
+                                "events_url",
+                                "followers_url",
+                                "following_url",
+                                "gists_url",
+                                "gravatar_id",
+                                "html_url",
+                                "id",
+                                "node_id",
+                                "login",
+                                "organizations_url",
+                                "received_events_url",
+                                "repos_url",
+                                "site_admin",
+                                "starred_url",
+                                "subscriptions_url",
+                                "type",
+                                "url"
+                              ]
+                            },
+                            {
+                              "description": "An enterprise on GitHub.",
+                              "type": "object",
+                              "properties": {
+                                "description": {
+                                  "description": "A short description of the enterprise.",
+                                  "type": "string"
+                                },
+                                "htmlUrl": {
+                                  "type": "string"
+                                },
+                                "websiteUrl": {
+                                  "description": "The enterprise's website URL.",
+                                  "type": "string"
+                                },
+                                "id": {
+                                  "description": "Unique identifier of the enterprise",
+                                  "type": "integer"
+                                },
+                                "nodeId": {
+                                  "type": "string"
+                                },
+                                "name": {
+                                  "description": "The name of the enterprise.",
+                                  "type": "string"
+                                },
+                                "slug": {
+                                  "description": "The slug url identifier for the enterprise.",
+                                  "type": "string"
+                                },
+                                "createdAt": {
+                                  "type": "string"
+                                },
+                                "updatedAt": {
+                                  "type": "string"
+                                },
+                                "avatarUrl": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "id",
+                                "node_id",
+                                "name",
+                                "slug",
+                                "html_url",
+                                "created_at",
+                                "updated_at",
+                                "avatar_url"
+                              ]
+                            }
+                          ]
+                        },
+                        "name": {
+                          "description": "The name of the GitHub app",
+                          "type": "string"
+                        },
+                        "description": {
+                          "type": "string"
+                        },
+                        "externalUrl": {
+                          "type": "string"
+                        },
+                        "htmlUrl": {
+                          "type": "string"
+                        },
+                        "createdAt": {
+                          "type": "string"
+                        },
+                        "updatedAt": {
+                          "type": "string"
+                        },
+                        "permissions": {
+                          "description": "The set of permissions for the GitHub app",
+                          "type": "object",
+                          "properties": {
+                            "issues": {
+                              "type": "string"
+                            },
+                            "checks": {
+                              "type": "string"
+                            },
+                            "metadata": {
+                              "type": "string"
+                            },
+                            "contents": {
+                              "type": "string"
+                            },
+                            "deployments": {
+                              "type": "string"
+                            }
+                          },
+                          "additionalProperties": {
+                            "type": "string"
+                          }
+                        },
+                        "events": {
+                          "description": "The list of events for the GitHub app",
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "installationsCount": {
+                          "description": "The number of installations associated with the GitHub app",
+                          "type": "integer"
+                        },
+                        "clientSecret": {
+                          "type": "string"
+                        },
+                        "webhookSecret": {
+                          "type": "string"
+                        },
+                        "pem": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "node_id",
+                        "owner",
+                        "name",
+                        "description",
+                        "external_url",
+                        "html_url",
+                        "created_at",
+                        "updated_at",
+                        "permissions",
+                        "events"
+                      ]
+                    }
+                  }
+                }
+              },
+              "dismissStaleReviews": {
+                "type": "boolean"
+              },
+              "requireCodeOwnerReviews": {
+                "type": "boolean"
+              },
+              "requiredApprovingReviewCount": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 6
+              },
+              "requireLastPushApproval": {
+                "description": "Whether the most recent push must be approved by someone other than the person who pushed it.",
+                "type": "boolean"
+              }
+            },
+            "required": ["dismiss_stale_reviews", "require_code_owner_reviews"]
+          },
+          "restrictions": {
+            "description": "Branch Restriction Policy",
+            "type": "object",
+            "properties": {
+              "url": {
+                "type": "string"
+              },
+              "usersUrl": {
+                "type": "string"
+              },
+              "teamsUrl": {
+                "type": "string"
+              },
+              "appsUrl": {
+                "type": "string"
+              },
+              "users": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "login": {
+                      "type": "string"
+                    },
+                    "id": {
+                      "type": "integer"
+                    },
+                    "nodeId": {
+                      "type": "string"
+                    },
+                    "avatarUrl": {
+                      "type": "string"
+                    },
+                    "gravatarId": {
+                      "type": "string"
+                    },
+                    "url": {
+                      "type": "string"
+                    },
+                    "htmlUrl": {
+                      "type": "string"
+                    },
+                    "followersUrl": {
+                      "type": "string"
+                    },
+                    "followingUrl": {
+                      "type": "string"
+                    },
+                    "gistsUrl": {
+                      "type": "string"
+                    },
+                    "starredUrl": {
+                      "type": "string"
+                    },
+                    "subscriptionsUrl": {
+                      "type": "string"
+                    },
+                    "organizationsUrl": {
+                      "type": "string"
+                    },
+                    "reposUrl": {
+                      "type": "string"
+                    },
+                    "eventsUrl": {
+                      "type": "string"
+                    },
+                    "receivedEventsUrl": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    },
+                    "siteAdmin": {
+                      "type": "boolean"
+                    },
+                    "userViewType": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "teams": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "nodeId": {
+                      "type": "string"
+                    },
+                    "url": {
+                      "type": "string"
+                    },
+                    "htmlUrl": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "slug": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "privacy": {
+                      "type": "string"
+                    },
+                    "notificationSetting": {
+                      "type": "string"
+                    },
+                    "permission": {
+                      "type": "string"
+                    },
+                    "membersUrl": {
+                      "type": "string"
+                    },
+                    "repositoriesUrl": {
+                      "type": "string"
+                    },
+                    "parent": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "apps": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "slug": {
+                      "type": "string"
+                    },
+                    "nodeId": {
+                      "type": "string"
+                    },
+                    "owner": {
+                      "type": "object",
+                      "properties": {
+                        "login": {
+                          "type": "string"
+                        },
+                        "id": {
+                          "type": "integer"
+                        },
+                        "nodeId": {
+                          "type": "string"
+                        },
+                        "url": {
+                          "type": "string"
+                        },
+                        "reposUrl": {
+                          "type": "string"
+                        },
+                        "eventsUrl": {
+                          "type": "string"
+                        },
+                        "hooksUrl": {
+                          "type": "string"
+                        },
+                        "issuesUrl": {
+                          "type": "string"
+                        },
+                        "membersUrl": {
+                          "type": "string"
+                        },
+                        "publicMembersUrl": {
+                          "type": "string"
+                        },
+                        "avatarUrl": {
+                          "type": "string"
+                        },
+                        "description": {
+                          "type": "string"
+                        },
+                        "gravatarId": {
+                          "type": "string"
+                        },
+                        "htmlUrl": {
+                          "type": "string"
+                        },
+                        "followersUrl": {
+                          "type": "string"
+                        },
+                        "followingUrl": {
+                          "type": "string"
+                        },
+                        "gistsUrl": {
+                          "type": "string"
+                        },
+                        "starredUrl": {
+                          "type": "string"
+                        },
+                        "subscriptionsUrl": {
+                          "type": "string"
+                        },
+                        "organizationsUrl": {
+                          "type": "string"
+                        },
+                        "receivedEventsUrl": {
+                          "type": "string"
+                        },
+                        "type": {
+                          "type": "string"
+                        },
+                        "siteAdmin": {
+                          "type": "boolean"
+                        },
+                        "userViewType": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "clientId": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "externalUrl": {
+                      "type": "string"
+                    },
+                    "htmlUrl": {
+                      "type": "string"
+                    },
+                    "createdAt": {
+                      "type": "string"
+                    },
+                    "updatedAt": {
+                      "type": "string"
+                    },
+                    "permissions": {
+                      "type": "object",
+                      "properties": {
+                        "metadata": {
+                          "type": "string"
+                        },
+                        "contents": {
+                          "type": "string"
+                        },
+                        "issues": {
+                          "type": "string"
+                        },
+                        "singleFile": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "events": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "required": [
+              "url",
+              "users_url",
+              "teams_url",
+              "apps_url",
+              "users",
+              "teams",
+              "apps"
+            ]
+          },
+          "requiredLinearHistory": {
+            "type": "object",
+            "properties": {
+              "enabled": {
+                "type": "boolean"
+              }
+            }
+          },
+          "allowForcePushes": {
+            "type": "object",
+            "properties": {
+              "enabled": {
+                "type": "boolean"
+              }
+            }
+          },
+          "allowDeletions": {
+            "type": "object",
+            "properties": {
+              "enabled": {
+                "type": "boolean"
+              }
+            }
+          },
+          "blockCreations": {
+            "type": "object",
+            "properties": {
+              "enabled": {
+                "type": "boolean"
+              }
+            }
+          },
+          "requiredConversationResolution": {
+            "type": "object",
+            "properties": {
+              "enabled": {
+                "type": "boolean"
+              }
+            }
+          },
+          "name": {
+            "type": "string"
+          },
+          "protectionUrl": {
+            "type": "string"
+          },
+          "requiredSignatures": {
+            "type": "object",
+            "properties": {
+              "url": {
+                "type": "string"
+              },
+              "enabled": {
+                "type": "boolean"
+              }
+            },
+            "required": ["url", "enabled"]
+          },
+          "lockBranch": {
+            "type": "object",
+            "description": "Whether to set the branch as read-only. If this is true, users will not be able to push to the branch.",
+            "properties": {
+              "enabled": {
+                "type": "boolean"
+              }
+            }
+          },
+          "allowForkSyncing": {
+            "type": "object",
+            "description": "Whether users can pull changes from upstream when the branch is locked. Set to `true` to allow fork syncing. Set to `false` to prevent fork syncing.",
+            "properties": {
+              "enabled": {
+                "type": "boolean"
+              }
+            }
+          }
+        }
+      },
+      "protectionUrl": {
+        "type": "string"
+      }
+    },
+    "required": ["name", "commit", "protected"]
+  }
+}

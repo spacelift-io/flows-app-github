@@ -1,0 +1,149 @@
+{
+  "description": "File Commit",
+  "type": "object",
+  "required": ["content", "commit"],
+  "properties": {
+    "content": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "path": {
+          "type": "string"
+        },
+        "sha": {
+          "type": "string"
+        },
+        "size": {
+          "type": "integer"
+        },
+        "url": {
+          "type": "string"
+        },
+        "htmlUrl": {
+          "type": "string"
+        },
+        "gitUrl": {
+          "type": "string"
+        },
+        "downloadUrl": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "Links": {
+          "type": "object",
+          "properties": {
+            "self": {
+              "type": "string"
+            },
+            "git": {
+              "type": "string"
+            },
+            "html": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "commit": {
+      "type": "object",
+      "properties": {
+        "sha": {
+          "type": "string"
+        },
+        "nodeId": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        },
+        "htmlUrl": {
+          "type": "string"
+        },
+        "author": {
+          "type": "object",
+          "properties": {
+            "date": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            }
+          }
+        },
+        "committer": {
+          "type": "object",
+          "properties": {
+            "date": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            }
+          }
+        },
+        "message": {
+          "type": "string"
+        },
+        "tree": {
+          "type": "object",
+          "properties": {
+            "url": {
+              "type": "string"
+            },
+            "sha": {
+              "type": "string"
+            }
+          }
+        },
+        "parents": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "url": {
+                "type": "string"
+              },
+              "htmlUrl": {
+                "type": "string"
+              },
+              "sha": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "verification": {
+          "type": "object",
+          "properties": {
+            "verified": {
+              "type": "boolean"
+            },
+            "reason": {
+              "type": "string"
+            },
+            "signature": {
+              "type": "string"
+            },
+            "payload": {
+              "type": "string"
+            },
+            "verifiedAt": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}

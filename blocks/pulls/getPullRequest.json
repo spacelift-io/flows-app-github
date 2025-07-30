@@ -1,0 +1,2426 @@
+{
+  "type": "object",
+  "description": "Pull requests let you tell others about changes you've pushed to a repository on GitHub. Once a pull request is sent, interested parties can review the set of changes, discuss potential modifications, and even push follow-up commits if necessary.",
+  "properties": {
+    "url": {
+      "type": "string"
+    },
+    "id": {
+      "type": "integer"
+    },
+    "nodeId": {
+      "type": "string"
+    },
+    "htmlUrl": {
+      "type": "string"
+    },
+    "diffUrl": {
+      "type": "string"
+    },
+    "patchUrl": {
+      "type": "string"
+    },
+    "issueUrl": {
+      "type": "string"
+    },
+    "commitsUrl": {
+      "type": "string"
+    },
+    "reviewCommentsUrl": {
+      "type": "string"
+    },
+    "reviewCommentUrl": {
+      "type": "string"
+    },
+    "commentsUrl": {
+      "type": "string"
+    },
+    "statusesUrl": {
+      "type": "string"
+    },
+    "number": {
+      "description": "Number uniquely identifying the pull request within its repository.",
+      "type": "integer"
+    },
+    "state": {
+      "description": "State of this Pull Request. Either `open` or `closed`.",
+      "enum": ["open", "closed"],
+      "type": "string"
+    },
+    "locked": {
+      "type": "boolean"
+    },
+    "title": {
+      "description": "The title of the pull request.",
+      "type": "string"
+    },
+    "user": {
+      "description": "A GitHub user.",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "login": {
+          "type": "string"
+        },
+        "id": {
+          "type": "integer"
+        },
+        "nodeId": {
+          "type": "string"
+        },
+        "avatarUrl": {
+          "type": "string"
+        },
+        "gravatarId": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        },
+        "htmlUrl": {
+          "type": "string"
+        },
+        "followersUrl": {
+          "type": "string"
+        },
+        "followingUrl": {
+          "type": "string"
+        },
+        "gistsUrl": {
+          "type": "string"
+        },
+        "starredUrl": {
+          "type": "string"
+        },
+        "subscriptionsUrl": {
+          "type": "string"
+        },
+        "organizationsUrl": {
+          "type": "string"
+        },
+        "reposUrl": {
+          "type": "string"
+        },
+        "eventsUrl": {
+          "type": "string"
+        },
+        "receivedEventsUrl": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "siteAdmin": {
+          "type": "boolean"
+        },
+        "starredAt": {
+          "type": "string"
+        },
+        "userViewType": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "avatar_url",
+        "events_url",
+        "followers_url",
+        "following_url",
+        "gists_url",
+        "gravatar_id",
+        "html_url",
+        "id",
+        "node_id",
+        "login",
+        "organizations_url",
+        "received_events_url",
+        "repos_url",
+        "site_admin",
+        "starred_url",
+        "subscriptions_url",
+        "type",
+        "url"
+      ]
+    },
+    "body": {
+      "type": "string"
+    },
+    "labels": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "nodeId": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "color": {
+            "type": "string"
+          },
+          "default": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "node_id",
+          "url",
+          "name",
+          "description",
+          "color",
+          "default"
+        ]
+      }
+    },
+    "milestone": {
+      "description": "A collection of related issues and pull requests.",
+      "type": "object",
+      "properties": {
+        "url": {
+          "type": "string"
+        },
+        "htmlUrl": {
+          "type": "string"
+        },
+        "labelsUrl": {
+          "type": "string"
+        },
+        "id": {
+          "type": "integer"
+        },
+        "nodeId": {
+          "type": "string"
+        },
+        "number": {
+          "description": "The number of the milestone.",
+          "type": "integer"
+        },
+        "state": {
+          "description": "The state of the milestone.",
+          "type": "string",
+          "enum": ["open", "closed"]
+        },
+        "title": {
+          "description": "The title of the milestone.",
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "creator": {
+          "description": "A GitHub user.",
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "login": {
+              "type": "string"
+            },
+            "id": {
+              "type": "integer"
+            },
+            "nodeId": {
+              "type": "string"
+            },
+            "avatarUrl": {
+              "type": "string"
+            },
+            "gravatarId": {
+              "type": "string"
+            },
+            "url": {
+              "type": "string"
+            },
+            "htmlUrl": {
+              "type": "string"
+            },
+            "followersUrl": {
+              "type": "string"
+            },
+            "followingUrl": {
+              "type": "string"
+            },
+            "gistsUrl": {
+              "type": "string"
+            },
+            "starredUrl": {
+              "type": "string"
+            },
+            "subscriptionsUrl": {
+              "type": "string"
+            },
+            "organizationsUrl": {
+              "type": "string"
+            },
+            "reposUrl": {
+              "type": "string"
+            },
+            "eventsUrl": {
+              "type": "string"
+            },
+            "receivedEventsUrl": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            },
+            "siteAdmin": {
+              "type": "boolean"
+            },
+            "starredAt": {
+              "type": "string"
+            },
+            "userViewType": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "avatar_url",
+            "events_url",
+            "followers_url",
+            "following_url",
+            "gists_url",
+            "gravatar_id",
+            "html_url",
+            "id",
+            "node_id",
+            "login",
+            "organizations_url",
+            "received_events_url",
+            "repos_url",
+            "site_admin",
+            "starred_url",
+            "subscriptions_url",
+            "type",
+            "url"
+          ]
+        },
+        "openIssues": {
+          "type": "integer"
+        },
+        "closedIssues": {
+          "type": "integer"
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        },
+        "closedAt": {
+          "type": "string"
+        },
+        "dueOn": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "closed_issues",
+        "creator",
+        "description",
+        "due_on",
+        "closed_at",
+        "id",
+        "node_id",
+        "labels_url",
+        "html_url",
+        "number",
+        "open_issues",
+        "state",
+        "title",
+        "url",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    "activeLockReason": {
+      "type": "string"
+    },
+    "createdAt": {
+      "type": "string"
+    },
+    "updatedAt": {
+      "type": "string"
+    },
+    "closedAt": {
+      "type": "string"
+    },
+    "mergedAt": {
+      "type": "string"
+    },
+    "mergeCommitSha": {
+      "type": "string"
+    },
+    "assignee": {
+      "description": "A GitHub user.",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "login": {
+          "type": "string"
+        },
+        "id": {
+          "type": "integer"
+        },
+        "nodeId": {
+          "type": "string"
+        },
+        "avatarUrl": {
+          "type": "string"
+        },
+        "gravatarId": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        },
+        "htmlUrl": {
+          "type": "string"
+        },
+        "followersUrl": {
+          "type": "string"
+        },
+        "followingUrl": {
+          "type": "string"
+        },
+        "gistsUrl": {
+          "type": "string"
+        },
+        "starredUrl": {
+          "type": "string"
+        },
+        "subscriptionsUrl": {
+          "type": "string"
+        },
+        "organizationsUrl": {
+          "type": "string"
+        },
+        "reposUrl": {
+          "type": "string"
+        },
+        "eventsUrl": {
+          "type": "string"
+        },
+        "receivedEventsUrl": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "siteAdmin": {
+          "type": "boolean"
+        },
+        "starredAt": {
+          "type": "string"
+        },
+        "userViewType": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "avatar_url",
+        "events_url",
+        "followers_url",
+        "following_url",
+        "gists_url",
+        "gravatar_id",
+        "html_url",
+        "id",
+        "node_id",
+        "login",
+        "organizations_url",
+        "received_events_url",
+        "repos_url",
+        "site_admin",
+        "starred_url",
+        "subscriptions_url",
+        "type",
+        "url"
+      ]
+    },
+    "assignees": {
+      "type": "array",
+      "items": {
+        "description": "A GitHub user.",
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "login": {
+            "type": "string"
+          },
+          "id": {
+            "type": "integer"
+          },
+          "nodeId": {
+            "type": "string"
+          },
+          "avatarUrl": {
+            "type": "string"
+          },
+          "gravatarId": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "htmlUrl": {
+            "type": "string"
+          },
+          "followersUrl": {
+            "type": "string"
+          },
+          "followingUrl": {
+            "type": "string"
+          },
+          "gistsUrl": {
+            "type": "string"
+          },
+          "starredUrl": {
+            "type": "string"
+          },
+          "subscriptionsUrl": {
+            "type": "string"
+          },
+          "organizationsUrl": {
+            "type": "string"
+          },
+          "reposUrl": {
+            "type": "string"
+          },
+          "eventsUrl": {
+            "type": "string"
+          },
+          "receivedEventsUrl": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "siteAdmin": {
+            "type": "boolean"
+          },
+          "starredAt": {
+            "type": "string"
+          },
+          "userViewType": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "avatar_url",
+          "events_url",
+          "followers_url",
+          "following_url",
+          "gists_url",
+          "gravatar_id",
+          "html_url",
+          "id",
+          "node_id",
+          "login",
+          "organizations_url",
+          "received_events_url",
+          "repos_url",
+          "site_admin",
+          "starred_url",
+          "subscriptions_url",
+          "type",
+          "url"
+        ]
+      }
+    },
+    "requestedReviewers": {
+      "type": "array",
+      "items": {
+        "description": "A GitHub user.",
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "login": {
+            "type": "string"
+          },
+          "id": {
+            "type": "integer"
+          },
+          "nodeId": {
+            "type": "string"
+          },
+          "avatarUrl": {
+            "type": "string"
+          },
+          "gravatarId": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "htmlUrl": {
+            "type": "string"
+          },
+          "followersUrl": {
+            "type": "string"
+          },
+          "followingUrl": {
+            "type": "string"
+          },
+          "gistsUrl": {
+            "type": "string"
+          },
+          "starredUrl": {
+            "type": "string"
+          },
+          "subscriptionsUrl": {
+            "type": "string"
+          },
+          "organizationsUrl": {
+            "type": "string"
+          },
+          "reposUrl": {
+            "type": "string"
+          },
+          "eventsUrl": {
+            "type": "string"
+          },
+          "receivedEventsUrl": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "siteAdmin": {
+            "type": "boolean"
+          },
+          "starredAt": {
+            "type": "string"
+          },
+          "userViewType": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "avatar_url",
+          "events_url",
+          "followers_url",
+          "following_url",
+          "gists_url",
+          "gravatar_id",
+          "html_url",
+          "id",
+          "node_id",
+          "login",
+          "organizations_url",
+          "received_events_url",
+          "repos_url",
+          "site_admin",
+          "starred_url",
+          "subscriptions_url",
+          "type",
+          "url"
+        ]
+      }
+    },
+    "requestedTeams": {
+      "type": "array",
+      "items": {
+        "description": "Groups of organization members that gives permissions on specified repositories.",
+        "type": "object",
+        "properties": {
+          "id": {
+            "description": "Unique identifier of the team",
+            "type": "integer"
+          },
+          "nodeId": {
+            "type": "string"
+          },
+          "url": {
+            "description": "URL for the team",
+            "type": "string"
+          },
+          "membersUrl": {
+            "type": "string"
+          },
+          "name": {
+            "description": "Name of the team",
+            "type": "string"
+          },
+          "description": {
+            "description": "Description of the team",
+            "type": "string"
+          },
+          "permission": {
+            "description": "Permission that the team will have for its repositories",
+            "type": "string"
+          },
+          "privacy": {
+            "description": "The level of privacy this team should have",
+            "type": "string"
+          },
+          "notificationSetting": {
+            "description": "The notification setting the team has set",
+            "type": "string"
+          },
+          "htmlUrl": {
+            "type": "string"
+          },
+          "repositoriesUrl": {
+            "type": "string"
+          },
+          "slug": {
+            "type": "string"
+          },
+          "ldapDn": {
+            "description": "Distinguished Name (DN) that team maps to within LDAP environment",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "node_id",
+          "url",
+          "members_url",
+          "name",
+          "description",
+          "permission",
+          "html_url",
+          "repositories_url",
+          "slug"
+        ]
+      }
+    },
+    "head": {
+      "type": "object",
+      "properties": {
+        "label": {
+          "type": "string"
+        },
+        "ref": {
+          "type": "string"
+        },
+        "repo": {
+          "description": "A repository on GitHub.",
+          "type": "object",
+          "properties": {
+            "id": {
+              "description": "Unique identifier of the repository",
+              "type": "integer"
+            },
+            "nodeId": {
+              "type": "string"
+            },
+            "name": {
+              "description": "The name of the repository.",
+              "type": "string"
+            },
+            "fullName": {
+              "type": "string"
+            },
+            "license": {
+              "description": "License Simple",
+              "type": "object",
+              "properties": {
+                "key": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string"
+                },
+                "spdxId": {
+                  "type": "string"
+                },
+                "nodeId": {
+                  "type": "string"
+                },
+                "htmlUrl": {
+                  "type": "string"
+                }
+              },
+              "required": ["key", "name", "url", "spdx_id", "node_id"]
+            },
+            "forks": {
+              "type": "integer"
+            },
+            "permissions": {
+              "type": "object",
+              "properties": {
+                "admin": {
+                  "type": "boolean"
+                },
+                "pull": {
+                  "type": "boolean"
+                },
+                "triage": {
+                  "type": "boolean"
+                },
+                "push": {
+                  "type": "boolean"
+                },
+                "maintain": {
+                  "type": "boolean"
+                }
+              },
+              "required": ["admin", "pull", "push"]
+            },
+            "owner": {
+              "description": "A GitHub user.",
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "login": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "integer"
+                },
+                "nodeId": {
+                  "type": "string"
+                },
+                "avatarUrl": {
+                  "type": "string"
+                },
+                "gravatarId": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string"
+                },
+                "htmlUrl": {
+                  "type": "string"
+                },
+                "followersUrl": {
+                  "type": "string"
+                },
+                "followingUrl": {
+                  "type": "string"
+                },
+                "gistsUrl": {
+                  "type": "string"
+                },
+                "starredUrl": {
+                  "type": "string"
+                },
+                "subscriptionsUrl": {
+                  "type": "string"
+                },
+                "organizationsUrl": {
+                  "type": "string"
+                },
+                "reposUrl": {
+                  "type": "string"
+                },
+                "eventsUrl": {
+                  "type": "string"
+                },
+                "receivedEventsUrl": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string"
+                },
+                "siteAdmin": {
+                  "type": "boolean"
+                },
+                "starredAt": {
+                  "type": "string"
+                },
+                "userViewType": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "avatar_url",
+                "events_url",
+                "followers_url",
+                "following_url",
+                "gists_url",
+                "gravatar_id",
+                "html_url",
+                "id",
+                "node_id",
+                "login",
+                "organizations_url",
+                "received_events_url",
+                "repos_url",
+                "site_admin",
+                "starred_url",
+                "subscriptions_url",
+                "type",
+                "url"
+              ]
+            },
+            "private": {
+              "description": "Whether the repository is private or public.",
+              "type": "boolean"
+            },
+            "htmlUrl": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "fork": {
+              "type": "boolean"
+            },
+            "url": {
+              "type": "string"
+            },
+            "archiveUrl": {
+              "type": "string"
+            },
+            "assigneesUrl": {
+              "type": "string"
+            },
+            "blobsUrl": {
+              "type": "string"
+            },
+            "branchesUrl": {
+              "type": "string"
+            },
+            "collaboratorsUrl": {
+              "type": "string"
+            },
+            "commentsUrl": {
+              "type": "string"
+            },
+            "commitsUrl": {
+              "type": "string"
+            },
+            "compareUrl": {
+              "type": "string"
+            },
+            "contentsUrl": {
+              "type": "string"
+            },
+            "contributorsUrl": {
+              "type": "string"
+            },
+            "deploymentsUrl": {
+              "type": "string"
+            },
+            "downloadsUrl": {
+              "type": "string"
+            },
+            "eventsUrl": {
+              "type": "string"
+            },
+            "forksUrl": {
+              "type": "string"
+            },
+            "gitCommitsUrl": {
+              "type": "string"
+            },
+            "gitRefsUrl": {
+              "type": "string"
+            },
+            "gitTagsUrl": {
+              "type": "string"
+            },
+            "gitUrl": {
+              "type": "string"
+            },
+            "issueCommentUrl": {
+              "type": "string"
+            },
+            "issueEventsUrl": {
+              "type": "string"
+            },
+            "issuesUrl": {
+              "type": "string"
+            },
+            "keysUrl": {
+              "type": "string"
+            },
+            "labelsUrl": {
+              "type": "string"
+            },
+            "languagesUrl": {
+              "type": "string"
+            },
+            "mergesUrl": {
+              "type": "string"
+            },
+            "milestonesUrl": {
+              "type": "string"
+            },
+            "notificationsUrl": {
+              "type": "string"
+            },
+            "pullsUrl": {
+              "type": "string"
+            },
+            "releasesUrl": {
+              "type": "string"
+            },
+            "sshUrl": {
+              "type": "string"
+            },
+            "stargazersUrl": {
+              "type": "string"
+            },
+            "statusesUrl": {
+              "type": "string"
+            },
+            "subscribersUrl": {
+              "type": "string"
+            },
+            "subscriptionUrl": {
+              "type": "string"
+            },
+            "tagsUrl": {
+              "type": "string"
+            },
+            "teamsUrl": {
+              "type": "string"
+            },
+            "treesUrl": {
+              "type": "string"
+            },
+            "cloneUrl": {
+              "type": "string"
+            },
+            "mirrorUrl": {
+              "type": "string"
+            },
+            "hooksUrl": {
+              "type": "string"
+            },
+            "svnUrl": {
+              "type": "string"
+            },
+            "homepage": {
+              "type": "string"
+            },
+            "language": {
+              "type": "string"
+            },
+            "forksCount": {
+              "type": "integer"
+            },
+            "stargazersCount": {
+              "type": "integer"
+            },
+            "watchersCount": {
+              "type": "integer"
+            },
+            "size": {
+              "description": "The size of the repository, in kilobytes. Size is calculated hourly. When a repository is initially created, the size is 0.",
+              "type": "integer"
+            },
+            "defaultBranch": {
+              "description": "The default branch of the repository.",
+              "type": "string"
+            },
+            "openIssuesCount": {
+              "type": "integer"
+            },
+            "isTemplate": {
+              "description": "Whether this repository acts as a template that can be used to generate new repositories.",
+              "type": "boolean"
+            },
+            "topics": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "hasIssues": {
+              "description": "Whether issues are enabled.",
+              "type": "boolean"
+            },
+            "hasProjects": {
+              "description": "Whether projects are enabled.",
+              "type": "boolean"
+            },
+            "hasWiki": {
+              "description": "Whether the wiki is enabled.",
+              "type": "boolean"
+            },
+            "hasPages": {
+              "type": "boolean"
+            },
+            "hasDownloads": {
+              "description": "Whether downloads are enabled.",
+              "type": "boolean",
+              "deprecated": true
+            },
+            "hasDiscussions": {
+              "description": "Whether discussions are enabled.",
+              "type": "boolean"
+            },
+            "archived": {
+              "description": "Whether the repository is archived.",
+              "type": "boolean"
+            },
+            "disabled": {
+              "type": "boolean",
+              "description": "Returns whether or not this repository disabled."
+            },
+            "visibility": {
+              "description": "The repository visibility: public, private, or internal.",
+              "type": "string"
+            },
+            "pushedAt": {
+              "type": "string"
+            },
+            "createdAt": {
+              "type": "string"
+            },
+            "updatedAt": {
+              "type": "string"
+            },
+            "allowRebaseMerge": {
+              "description": "Whether to allow rebase merges for pull requests.",
+              "type": "boolean"
+            },
+            "tempCloneToken": {
+              "type": "string"
+            },
+            "allowSquashMerge": {
+              "description": "Whether to allow squash merges for pull requests.",
+              "type": "boolean"
+            },
+            "allowAutoMerge": {
+              "description": "Whether to allow Auto-merge to be used on pull requests.",
+              "type": "boolean"
+            },
+            "deleteBranchOnMerge": {
+              "description": "Whether to delete head branches when pull requests are merged",
+              "type": "boolean"
+            },
+            "allowUpdateBranch": {
+              "description": "Whether or not a pull request head branch that is behind its base branch can always be updated even if it is not required to be up to date before merging.",
+              "type": "boolean"
+            },
+            "useSquashPrTitleAsDefault": {
+              "type": "boolean",
+              "description": "Whether a squash merge commit can use the pull request title as default. **This property is closing down. Please use `squash_merge_commit_title` instead.",
+              "deprecated": true
+            },
+            "squashMergeCommitTitle": {
+              "type": "string",
+              "enum": ["PR_TITLE", "COMMIT_OR_PR_TITLE"],
+              "description": "The default value for a squash merge commit title:\n\n- `PR_TITLE` - default to the pull request's title.\n- `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit)."
+            },
+            "squashMergeCommitMessage": {
+              "type": "string",
+              "enum": ["PR_BODY", "COMMIT_MESSAGES", "BLANK"],
+              "description": "The default value for a squash merge commit message:\n\n- `PR_BODY` - default to the pull request's body.\n- `COMMIT_MESSAGES` - default to the branch's commit messages.\n- `BLANK` - default to a blank commit message."
+            },
+            "mergeCommitTitle": {
+              "type": "string",
+              "enum": ["PR_TITLE", "MERGE_MESSAGE"],
+              "description": "The default value for a merge commit title.\n\n- `PR_TITLE` - default to the pull request's title.\n- `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name)."
+            },
+            "mergeCommitMessage": {
+              "type": "string",
+              "enum": ["PR_BODY", "PR_TITLE", "BLANK"],
+              "description": "The default value for a merge commit message.\n\n- `PR_TITLE` - default to the pull request's title.\n- `PR_BODY` - default to the pull request's body.\n- `BLANK` - default to a blank commit message."
+            },
+            "allowMergeCommit": {
+              "description": "Whether to allow merge commits for pull requests.",
+              "type": "boolean"
+            },
+            "allowForking": {
+              "description": "Whether to allow forking this repo",
+              "type": "boolean"
+            },
+            "webCommitSignoffRequired": {
+              "description": "Whether to require contributors to sign off on web-based commits",
+              "type": "boolean"
+            },
+            "openIssues": {
+              "type": "integer"
+            },
+            "watchers": {
+              "type": "integer"
+            },
+            "masterBranch": {
+              "type": "string"
+            },
+            "starredAt": {
+              "type": "string"
+            },
+            "anonymousAccessEnabled": {
+              "type": "boolean",
+              "description": "Whether anonymous git access is enabled for this repository"
+            },
+            "codeSearchIndexStatus": {
+              "type": "object",
+              "description": "The status of the code search index for this repository",
+              "properties": {
+                "lexicalSearchOk": {
+                  "type": "boolean"
+                },
+                "lexicalCommitSha": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "required": [
+            "archive_url",
+            "assignees_url",
+            "blobs_url",
+            "branches_url",
+            "collaborators_url",
+            "comments_url",
+            "commits_url",
+            "compare_url",
+            "contents_url",
+            "contributors_url",
+            "deployments_url",
+            "description",
+            "downloads_url",
+            "events_url",
+            "fork",
+            "forks_url",
+            "full_name",
+            "git_commits_url",
+            "git_refs_url",
+            "git_tags_url",
+            "hooks_url",
+            "html_url",
+            "id",
+            "node_id",
+            "issue_comment_url",
+            "issue_events_url",
+            "issues_url",
+            "keys_url",
+            "labels_url",
+            "languages_url",
+            "merges_url",
+            "milestones_url",
+            "name",
+            "notifications_url",
+            "owner",
+            "private",
+            "pulls_url",
+            "releases_url",
+            "stargazers_url",
+            "statuses_url",
+            "subscribers_url",
+            "subscription_url",
+            "tags_url",
+            "teams_url",
+            "trees_url",
+            "url",
+            "clone_url",
+            "default_branch",
+            "forks",
+            "forks_count",
+            "git_url",
+            "has_downloads",
+            "has_issues",
+            "has_projects",
+            "has_wiki",
+            "has_pages",
+            "homepage",
+            "language",
+            "archived",
+            "disabled",
+            "mirror_url",
+            "open_issues",
+            "open_issues_count",
+            "license",
+            "pushed_at",
+            "size",
+            "ssh_url",
+            "stargazers_count",
+            "svn_url",
+            "watchers",
+            "watchers_count",
+            "created_at",
+            "updated_at"
+          ]
+        },
+        "sha": {
+          "type": "string"
+        },
+        "user": {
+          "description": "A GitHub user.",
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "login": {
+              "type": "string"
+            },
+            "id": {
+              "type": "integer"
+            },
+            "nodeId": {
+              "type": "string"
+            },
+            "avatarUrl": {
+              "type": "string"
+            },
+            "gravatarId": {
+              "type": "string"
+            },
+            "url": {
+              "type": "string"
+            },
+            "htmlUrl": {
+              "type": "string"
+            },
+            "followersUrl": {
+              "type": "string"
+            },
+            "followingUrl": {
+              "type": "string"
+            },
+            "gistsUrl": {
+              "type": "string"
+            },
+            "starredUrl": {
+              "type": "string"
+            },
+            "subscriptionsUrl": {
+              "type": "string"
+            },
+            "organizationsUrl": {
+              "type": "string"
+            },
+            "reposUrl": {
+              "type": "string"
+            },
+            "eventsUrl": {
+              "type": "string"
+            },
+            "receivedEventsUrl": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            },
+            "siteAdmin": {
+              "type": "boolean"
+            },
+            "starredAt": {
+              "type": "string"
+            },
+            "userViewType": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "avatar_url",
+            "events_url",
+            "followers_url",
+            "following_url",
+            "gists_url",
+            "gravatar_id",
+            "html_url",
+            "id",
+            "node_id",
+            "login",
+            "organizations_url",
+            "received_events_url",
+            "repos_url",
+            "site_admin",
+            "starred_url",
+            "subscriptions_url",
+            "type",
+            "url"
+          ]
+        }
+      },
+      "required": ["label", "ref", "repo", "sha", "user"]
+    },
+    "base": {
+      "type": "object",
+      "properties": {
+        "label": {
+          "type": "string"
+        },
+        "ref": {
+          "type": "string"
+        },
+        "repo": {
+          "description": "A repository on GitHub.",
+          "type": "object",
+          "properties": {
+            "id": {
+              "description": "Unique identifier of the repository",
+              "type": "integer"
+            },
+            "nodeId": {
+              "type": "string"
+            },
+            "name": {
+              "description": "The name of the repository.",
+              "type": "string"
+            },
+            "fullName": {
+              "type": "string"
+            },
+            "license": {
+              "description": "License Simple",
+              "type": "object",
+              "properties": {
+                "key": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string"
+                },
+                "spdxId": {
+                  "type": "string"
+                },
+                "nodeId": {
+                  "type": "string"
+                },
+                "htmlUrl": {
+                  "type": "string"
+                }
+              },
+              "required": ["key", "name", "url", "spdx_id", "node_id"]
+            },
+            "forks": {
+              "type": "integer"
+            },
+            "permissions": {
+              "type": "object",
+              "properties": {
+                "admin": {
+                  "type": "boolean"
+                },
+                "pull": {
+                  "type": "boolean"
+                },
+                "triage": {
+                  "type": "boolean"
+                },
+                "push": {
+                  "type": "boolean"
+                },
+                "maintain": {
+                  "type": "boolean"
+                }
+              },
+              "required": ["admin", "pull", "push"]
+            },
+            "owner": {
+              "description": "A GitHub user.",
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "login": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "integer"
+                },
+                "nodeId": {
+                  "type": "string"
+                },
+                "avatarUrl": {
+                  "type": "string"
+                },
+                "gravatarId": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string"
+                },
+                "htmlUrl": {
+                  "type": "string"
+                },
+                "followersUrl": {
+                  "type": "string"
+                },
+                "followingUrl": {
+                  "type": "string"
+                },
+                "gistsUrl": {
+                  "type": "string"
+                },
+                "starredUrl": {
+                  "type": "string"
+                },
+                "subscriptionsUrl": {
+                  "type": "string"
+                },
+                "organizationsUrl": {
+                  "type": "string"
+                },
+                "reposUrl": {
+                  "type": "string"
+                },
+                "eventsUrl": {
+                  "type": "string"
+                },
+                "receivedEventsUrl": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string"
+                },
+                "siteAdmin": {
+                  "type": "boolean"
+                },
+                "starredAt": {
+                  "type": "string"
+                },
+                "userViewType": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "avatar_url",
+                "events_url",
+                "followers_url",
+                "following_url",
+                "gists_url",
+                "gravatar_id",
+                "html_url",
+                "id",
+                "node_id",
+                "login",
+                "organizations_url",
+                "received_events_url",
+                "repos_url",
+                "site_admin",
+                "starred_url",
+                "subscriptions_url",
+                "type",
+                "url"
+              ]
+            },
+            "private": {
+              "description": "Whether the repository is private or public.",
+              "type": "boolean"
+            },
+            "htmlUrl": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "fork": {
+              "type": "boolean"
+            },
+            "url": {
+              "type": "string"
+            },
+            "archiveUrl": {
+              "type": "string"
+            },
+            "assigneesUrl": {
+              "type": "string"
+            },
+            "blobsUrl": {
+              "type": "string"
+            },
+            "branchesUrl": {
+              "type": "string"
+            },
+            "collaboratorsUrl": {
+              "type": "string"
+            },
+            "commentsUrl": {
+              "type": "string"
+            },
+            "commitsUrl": {
+              "type": "string"
+            },
+            "compareUrl": {
+              "type": "string"
+            },
+            "contentsUrl": {
+              "type": "string"
+            },
+            "contributorsUrl": {
+              "type": "string"
+            },
+            "deploymentsUrl": {
+              "type": "string"
+            },
+            "downloadsUrl": {
+              "type": "string"
+            },
+            "eventsUrl": {
+              "type": "string"
+            },
+            "forksUrl": {
+              "type": "string"
+            },
+            "gitCommitsUrl": {
+              "type": "string"
+            },
+            "gitRefsUrl": {
+              "type": "string"
+            },
+            "gitTagsUrl": {
+              "type": "string"
+            },
+            "gitUrl": {
+              "type": "string"
+            },
+            "issueCommentUrl": {
+              "type": "string"
+            },
+            "issueEventsUrl": {
+              "type": "string"
+            },
+            "issuesUrl": {
+              "type": "string"
+            },
+            "keysUrl": {
+              "type": "string"
+            },
+            "labelsUrl": {
+              "type": "string"
+            },
+            "languagesUrl": {
+              "type": "string"
+            },
+            "mergesUrl": {
+              "type": "string"
+            },
+            "milestonesUrl": {
+              "type": "string"
+            },
+            "notificationsUrl": {
+              "type": "string"
+            },
+            "pullsUrl": {
+              "type": "string"
+            },
+            "releasesUrl": {
+              "type": "string"
+            },
+            "sshUrl": {
+              "type": "string"
+            },
+            "stargazersUrl": {
+              "type": "string"
+            },
+            "statusesUrl": {
+              "type": "string"
+            },
+            "subscribersUrl": {
+              "type": "string"
+            },
+            "subscriptionUrl": {
+              "type": "string"
+            },
+            "tagsUrl": {
+              "type": "string"
+            },
+            "teamsUrl": {
+              "type": "string"
+            },
+            "treesUrl": {
+              "type": "string"
+            },
+            "cloneUrl": {
+              "type": "string"
+            },
+            "mirrorUrl": {
+              "type": "string"
+            },
+            "hooksUrl": {
+              "type": "string"
+            },
+            "svnUrl": {
+              "type": "string"
+            },
+            "homepage": {
+              "type": "string"
+            },
+            "language": {
+              "type": "string"
+            },
+            "forksCount": {
+              "type": "integer"
+            },
+            "stargazersCount": {
+              "type": "integer"
+            },
+            "watchersCount": {
+              "type": "integer"
+            },
+            "size": {
+              "description": "The size of the repository, in kilobytes. Size is calculated hourly. When a repository is initially created, the size is 0.",
+              "type": "integer"
+            },
+            "defaultBranch": {
+              "description": "The default branch of the repository.",
+              "type": "string"
+            },
+            "openIssuesCount": {
+              "type": "integer"
+            },
+            "isTemplate": {
+              "description": "Whether this repository acts as a template that can be used to generate new repositories.",
+              "type": "boolean"
+            },
+            "topics": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "hasIssues": {
+              "description": "Whether issues are enabled.",
+              "type": "boolean"
+            },
+            "hasProjects": {
+              "description": "Whether projects are enabled.",
+              "type": "boolean"
+            },
+            "hasWiki": {
+              "description": "Whether the wiki is enabled.",
+              "type": "boolean"
+            },
+            "hasPages": {
+              "type": "boolean"
+            },
+            "hasDownloads": {
+              "description": "Whether downloads are enabled.",
+              "type": "boolean",
+              "deprecated": true
+            },
+            "hasDiscussions": {
+              "description": "Whether discussions are enabled.",
+              "type": "boolean"
+            },
+            "archived": {
+              "description": "Whether the repository is archived.",
+              "type": "boolean"
+            },
+            "disabled": {
+              "type": "boolean",
+              "description": "Returns whether or not this repository disabled."
+            },
+            "visibility": {
+              "description": "The repository visibility: public, private, or internal.",
+              "type": "string"
+            },
+            "pushedAt": {
+              "type": "string"
+            },
+            "createdAt": {
+              "type": "string"
+            },
+            "updatedAt": {
+              "type": "string"
+            },
+            "allowRebaseMerge": {
+              "description": "Whether to allow rebase merges for pull requests.",
+              "type": "boolean"
+            },
+            "tempCloneToken": {
+              "type": "string"
+            },
+            "allowSquashMerge": {
+              "description": "Whether to allow squash merges for pull requests.",
+              "type": "boolean"
+            },
+            "allowAutoMerge": {
+              "description": "Whether to allow Auto-merge to be used on pull requests.",
+              "type": "boolean"
+            },
+            "deleteBranchOnMerge": {
+              "description": "Whether to delete head branches when pull requests are merged",
+              "type": "boolean"
+            },
+            "allowUpdateBranch": {
+              "description": "Whether or not a pull request head branch that is behind its base branch can always be updated even if it is not required to be up to date before merging.",
+              "type": "boolean"
+            },
+            "useSquashPrTitleAsDefault": {
+              "type": "boolean",
+              "description": "Whether a squash merge commit can use the pull request title as default. **This property is closing down. Please use `squash_merge_commit_title` instead.",
+              "deprecated": true
+            },
+            "squashMergeCommitTitle": {
+              "type": "string",
+              "enum": ["PR_TITLE", "COMMIT_OR_PR_TITLE"],
+              "description": "The default value for a squash merge commit title:\n\n- `PR_TITLE` - default to the pull request's title.\n- `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit)."
+            },
+            "squashMergeCommitMessage": {
+              "type": "string",
+              "enum": ["PR_BODY", "COMMIT_MESSAGES", "BLANK"],
+              "description": "The default value for a squash merge commit message:\n\n- `PR_BODY` - default to the pull request's body.\n- `COMMIT_MESSAGES` - default to the branch's commit messages.\n- `BLANK` - default to a blank commit message."
+            },
+            "mergeCommitTitle": {
+              "type": "string",
+              "enum": ["PR_TITLE", "MERGE_MESSAGE"],
+              "description": "The default value for a merge commit title.\n\n- `PR_TITLE` - default to the pull request's title.\n- `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name)."
+            },
+            "mergeCommitMessage": {
+              "type": "string",
+              "enum": ["PR_BODY", "PR_TITLE", "BLANK"],
+              "description": "The default value for a merge commit message.\n\n- `PR_TITLE` - default to the pull request's title.\n- `PR_BODY` - default to the pull request's body.\n- `BLANK` - default to a blank commit message."
+            },
+            "allowMergeCommit": {
+              "description": "Whether to allow merge commits for pull requests.",
+              "type": "boolean"
+            },
+            "allowForking": {
+              "description": "Whether to allow forking this repo",
+              "type": "boolean"
+            },
+            "webCommitSignoffRequired": {
+              "description": "Whether to require contributors to sign off on web-based commits",
+              "type": "boolean"
+            },
+            "openIssues": {
+              "type": "integer"
+            },
+            "watchers": {
+              "type": "integer"
+            },
+            "masterBranch": {
+              "type": "string"
+            },
+            "starredAt": {
+              "type": "string"
+            },
+            "anonymousAccessEnabled": {
+              "type": "boolean",
+              "description": "Whether anonymous git access is enabled for this repository"
+            },
+            "codeSearchIndexStatus": {
+              "type": "object",
+              "description": "The status of the code search index for this repository",
+              "properties": {
+                "lexicalSearchOk": {
+                  "type": "boolean"
+                },
+                "lexicalCommitSha": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "required": [
+            "archive_url",
+            "assignees_url",
+            "blobs_url",
+            "branches_url",
+            "collaborators_url",
+            "comments_url",
+            "commits_url",
+            "compare_url",
+            "contents_url",
+            "contributors_url",
+            "deployments_url",
+            "description",
+            "downloads_url",
+            "events_url",
+            "fork",
+            "forks_url",
+            "full_name",
+            "git_commits_url",
+            "git_refs_url",
+            "git_tags_url",
+            "hooks_url",
+            "html_url",
+            "id",
+            "node_id",
+            "issue_comment_url",
+            "issue_events_url",
+            "issues_url",
+            "keys_url",
+            "labels_url",
+            "languages_url",
+            "merges_url",
+            "milestones_url",
+            "name",
+            "notifications_url",
+            "owner",
+            "private",
+            "pulls_url",
+            "releases_url",
+            "stargazers_url",
+            "statuses_url",
+            "subscribers_url",
+            "subscription_url",
+            "tags_url",
+            "teams_url",
+            "trees_url",
+            "url",
+            "clone_url",
+            "default_branch",
+            "forks",
+            "forks_count",
+            "git_url",
+            "has_downloads",
+            "has_issues",
+            "has_projects",
+            "has_wiki",
+            "has_pages",
+            "homepage",
+            "language",
+            "archived",
+            "disabled",
+            "mirror_url",
+            "open_issues",
+            "open_issues_count",
+            "license",
+            "pushed_at",
+            "size",
+            "ssh_url",
+            "stargazers_count",
+            "svn_url",
+            "watchers",
+            "watchers_count",
+            "created_at",
+            "updated_at"
+          ]
+        },
+        "sha": {
+          "type": "string"
+        },
+        "user": {
+          "description": "A GitHub user.",
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "login": {
+              "type": "string"
+            },
+            "id": {
+              "type": "integer"
+            },
+            "nodeId": {
+              "type": "string"
+            },
+            "avatarUrl": {
+              "type": "string"
+            },
+            "gravatarId": {
+              "type": "string"
+            },
+            "url": {
+              "type": "string"
+            },
+            "htmlUrl": {
+              "type": "string"
+            },
+            "followersUrl": {
+              "type": "string"
+            },
+            "followingUrl": {
+              "type": "string"
+            },
+            "gistsUrl": {
+              "type": "string"
+            },
+            "starredUrl": {
+              "type": "string"
+            },
+            "subscriptionsUrl": {
+              "type": "string"
+            },
+            "organizationsUrl": {
+              "type": "string"
+            },
+            "reposUrl": {
+              "type": "string"
+            },
+            "eventsUrl": {
+              "type": "string"
+            },
+            "receivedEventsUrl": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            },
+            "siteAdmin": {
+              "type": "boolean"
+            },
+            "starredAt": {
+              "type": "string"
+            },
+            "userViewType": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "avatar_url",
+            "events_url",
+            "followers_url",
+            "following_url",
+            "gists_url",
+            "gravatar_id",
+            "html_url",
+            "id",
+            "node_id",
+            "login",
+            "organizations_url",
+            "received_events_url",
+            "repos_url",
+            "site_admin",
+            "starred_url",
+            "subscriptions_url",
+            "type",
+            "url"
+          ]
+        }
+      },
+      "required": ["label", "ref", "repo", "sha", "user"]
+    },
+    "Links": {
+      "type": "object",
+      "properties": {
+        "comments": {
+          "description": "Hypermedia Link",
+          "type": "object",
+          "properties": {
+            "href": {
+              "type": "string"
+            }
+          },
+          "required": ["href"]
+        },
+        "commits": {
+          "description": "Hypermedia Link",
+          "type": "object",
+          "properties": {
+            "href": {
+              "type": "string"
+            }
+          },
+          "required": ["href"]
+        },
+        "statuses": {
+          "description": "Hypermedia Link",
+          "type": "object",
+          "properties": {
+            "href": {
+              "type": "string"
+            }
+          },
+          "required": ["href"]
+        },
+        "html": {
+          "description": "Hypermedia Link",
+          "type": "object",
+          "properties": {
+            "href": {
+              "type": "string"
+            }
+          },
+          "required": ["href"]
+        },
+        "issue": {
+          "description": "Hypermedia Link",
+          "type": "object",
+          "properties": {
+            "href": {
+              "type": "string"
+            }
+          },
+          "required": ["href"]
+        },
+        "reviewComments": {
+          "description": "Hypermedia Link",
+          "type": "object",
+          "properties": {
+            "href": {
+              "type": "string"
+            }
+          },
+          "required": ["href"]
+        },
+        "reviewComment": {
+          "description": "Hypermedia Link",
+          "type": "object",
+          "properties": {
+            "href": {
+              "type": "string"
+            }
+          },
+          "required": ["href"]
+        },
+        "self": {
+          "description": "Hypermedia Link",
+          "type": "object",
+          "properties": {
+            "href": {
+              "type": "string"
+            }
+          },
+          "required": ["href"]
+        }
+      },
+      "required": [
+        "comments",
+        "commits",
+        "statuses",
+        "html",
+        "issue",
+        "review_comments",
+        "review_comment",
+        "self"
+      ]
+    },
+    "authorAssociation": {
+      "type": "string",
+      "description": "How the author is associated with the repository.",
+      "enum": [
+        "COLLABORATOR",
+        "CONTRIBUTOR",
+        "FIRST_TIMER",
+        "FIRST_TIME_CONTRIBUTOR",
+        "MANNEQUIN",
+        "MEMBER",
+        "NONE",
+        "OWNER"
+      ]
+    },
+    "autoMerge": {
+      "description": "The status of auto merging a pull request.",
+      "type": "object",
+      "properties": {
+        "enabledBy": {
+          "description": "A GitHub user.",
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "login": {
+              "type": "string"
+            },
+            "id": {
+              "type": "integer"
+            },
+            "nodeId": {
+              "type": "string"
+            },
+            "avatarUrl": {
+              "type": "string"
+            },
+            "gravatarId": {
+              "type": "string"
+            },
+            "url": {
+              "type": "string"
+            },
+            "htmlUrl": {
+              "type": "string"
+            },
+            "followersUrl": {
+              "type": "string"
+            },
+            "followingUrl": {
+              "type": "string"
+            },
+            "gistsUrl": {
+              "type": "string"
+            },
+            "starredUrl": {
+              "type": "string"
+            },
+            "subscriptionsUrl": {
+              "type": "string"
+            },
+            "organizationsUrl": {
+              "type": "string"
+            },
+            "reposUrl": {
+              "type": "string"
+            },
+            "eventsUrl": {
+              "type": "string"
+            },
+            "receivedEventsUrl": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            },
+            "siteAdmin": {
+              "type": "boolean"
+            },
+            "starredAt": {
+              "type": "string"
+            },
+            "userViewType": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "avatar_url",
+            "events_url",
+            "followers_url",
+            "following_url",
+            "gists_url",
+            "gravatar_id",
+            "html_url",
+            "id",
+            "node_id",
+            "login",
+            "organizations_url",
+            "received_events_url",
+            "repos_url",
+            "site_admin",
+            "starred_url",
+            "subscriptions_url",
+            "type",
+            "url"
+          ]
+        },
+        "mergeMethod": {
+          "type": "string",
+          "description": "The merge method to use.",
+          "enum": ["merge", "squash", "rebase"]
+        },
+        "commitTitle": {
+          "type": "string",
+          "description": "Title for the merge commit message."
+        },
+        "commitMessage": {
+          "type": "string",
+          "description": "Commit message for the merge commit."
+        }
+      },
+      "required": [
+        "enabled_by",
+        "merge_method",
+        "commit_title",
+        "commit_message"
+      ]
+    },
+    "draft": {
+      "description": "Indicates whether or not the pull request is a draft.",
+      "type": "boolean"
+    },
+    "merged": {
+      "type": "boolean"
+    },
+    "mergeable": {
+      "type": "boolean"
+    },
+    "rebaseable": {
+      "type": "boolean"
+    },
+    "mergeableState": {
+      "type": "string"
+    },
+    "mergedBy": {
+      "description": "A GitHub user.",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "login": {
+          "type": "string"
+        },
+        "id": {
+          "type": "integer"
+        },
+        "nodeId": {
+          "type": "string"
+        },
+        "avatarUrl": {
+          "type": "string"
+        },
+        "gravatarId": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        },
+        "htmlUrl": {
+          "type": "string"
+        },
+        "followersUrl": {
+          "type": "string"
+        },
+        "followingUrl": {
+          "type": "string"
+        },
+        "gistsUrl": {
+          "type": "string"
+        },
+        "starredUrl": {
+          "type": "string"
+        },
+        "subscriptionsUrl": {
+          "type": "string"
+        },
+        "organizationsUrl": {
+          "type": "string"
+        },
+        "reposUrl": {
+          "type": "string"
+        },
+        "eventsUrl": {
+          "type": "string"
+        },
+        "receivedEventsUrl": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "siteAdmin": {
+          "type": "boolean"
+        },
+        "starredAt": {
+          "type": "string"
+        },
+        "userViewType": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "avatar_url",
+        "events_url",
+        "followers_url",
+        "following_url",
+        "gists_url",
+        "gravatar_id",
+        "html_url",
+        "id",
+        "node_id",
+        "login",
+        "organizations_url",
+        "received_events_url",
+        "repos_url",
+        "site_admin",
+        "starred_url",
+        "subscriptions_url",
+        "type",
+        "url"
+      ]
+    },
+    "comments": {
+      "type": "integer"
+    },
+    "reviewComments": {
+      "type": "integer"
+    },
+    "maintainerCanModify": {
+      "description": "Indicates whether maintainers can modify the pull request.",
+      "type": "boolean"
+    },
+    "commits": {
+      "type": "integer"
+    },
+    "additions": {
+      "type": "integer"
+    },
+    "deletions": {
+      "type": "integer"
+    },
+    "changedFiles": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "_links",
+    "assignee",
+    "labels",
+    "base",
+    "body",
+    "closed_at",
+    "comments_url",
+    "commits_url",
+    "created_at",
+    "diff_url",
+    "head",
+    "html_url",
+    "id",
+    "node_id",
+    "issue_url",
+    "merge_commit_sha",
+    "merged_at",
+    "milestone",
+    "number",
+    "patch_url",
+    "review_comment_url",
+    "review_comments_url",
+    "statuses_url",
+    "state",
+    "locked",
+    "title",
+    "updated_at",
+    "url",
+    "user",
+    "author_association",
+    "auto_merge",
+    "additions",
+    "changed_files",
+    "comments",
+    "commits",
+    "deletions",
+    "mergeable",
+    "mergeable_state",
+    "merged",
+    "maintainer_can_modify",
+    "merged_by",
+    "review_comments"
+  ]
+}

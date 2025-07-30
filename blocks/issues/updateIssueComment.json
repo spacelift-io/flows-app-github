@@ -1,0 +1,446 @@
+{
+  "description": "Comments provide a way for people to collaborate on an issue.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "Unique identifier of the issue comment",
+      "type": "integer"
+    },
+    "nodeId": {
+      "type": "string"
+    },
+    "url": {
+      "description": "URL for the issue comment",
+      "type": "string"
+    },
+    "body": {
+      "description": "Contents of the issue comment",
+      "type": "string"
+    },
+    "bodyText": {
+      "type": "string"
+    },
+    "bodyHtml": {
+      "type": "string"
+    },
+    "htmlUrl": {
+      "type": "string"
+    },
+    "user": {
+      "description": "A GitHub user.",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "login": {
+          "type": "string"
+        },
+        "id": {
+          "type": "integer"
+        },
+        "nodeId": {
+          "type": "string"
+        },
+        "avatarUrl": {
+          "type": "string"
+        },
+        "gravatarId": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        },
+        "htmlUrl": {
+          "type": "string"
+        },
+        "followersUrl": {
+          "type": "string"
+        },
+        "followingUrl": {
+          "type": "string"
+        },
+        "gistsUrl": {
+          "type": "string"
+        },
+        "starredUrl": {
+          "type": "string"
+        },
+        "subscriptionsUrl": {
+          "type": "string"
+        },
+        "organizationsUrl": {
+          "type": "string"
+        },
+        "reposUrl": {
+          "type": "string"
+        },
+        "eventsUrl": {
+          "type": "string"
+        },
+        "receivedEventsUrl": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "siteAdmin": {
+          "type": "boolean"
+        },
+        "starredAt": {
+          "type": "string"
+        },
+        "userViewType": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "avatar_url",
+        "events_url",
+        "followers_url",
+        "following_url",
+        "gists_url",
+        "gravatar_id",
+        "html_url",
+        "id",
+        "node_id",
+        "login",
+        "organizations_url",
+        "received_events_url",
+        "repos_url",
+        "site_admin",
+        "starred_url",
+        "subscriptions_url",
+        "type",
+        "url"
+      ]
+    },
+    "createdAt": {
+      "type": "string"
+    },
+    "updatedAt": {
+      "type": "string"
+    },
+    "issueUrl": {
+      "type": "string"
+    },
+    "authorAssociation": {
+      "type": "string",
+      "description": "How the author is associated with the repository.",
+      "enum": [
+        "COLLABORATOR",
+        "CONTRIBUTOR",
+        "FIRST_TIMER",
+        "FIRST_TIME_CONTRIBUTOR",
+        "MANNEQUIN",
+        "MEMBER",
+        "NONE",
+        "OWNER"
+      ]
+    },
+    "performedViaGithubApp": {
+      "description": "GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "Unique identifier of the GitHub app",
+          "type": "integer"
+        },
+        "slug": {
+          "description": "The slug name of the GitHub app",
+          "type": "string"
+        },
+        "nodeId": {
+          "type": "string"
+        },
+        "clientId": {
+          "type": "string"
+        },
+        "owner": {
+          "oneOf": [
+            {
+              "description": "A GitHub user.",
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "login": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "integer"
+                },
+                "nodeId": {
+                  "type": "string"
+                },
+                "avatarUrl": {
+                  "type": "string"
+                },
+                "gravatarId": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string"
+                },
+                "htmlUrl": {
+                  "type": "string"
+                },
+                "followersUrl": {
+                  "type": "string"
+                },
+                "followingUrl": {
+                  "type": "string"
+                },
+                "gistsUrl": {
+                  "type": "string"
+                },
+                "starredUrl": {
+                  "type": "string"
+                },
+                "subscriptionsUrl": {
+                  "type": "string"
+                },
+                "organizationsUrl": {
+                  "type": "string"
+                },
+                "reposUrl": {
+                  "type": "string"
+                },
+                "eventsUrl": {
+                  "type": "string"
+                },
+                "receivedEventsUrl": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string"
+                },
+                "siteAdmin": {
+                  "type": "boolean"
+                },
+                "starredAt": {
+                  "type": "string"
+                },
+                "userViewType": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "avatar_url",
+                "events_url",
+                "followers_url",
+                "following_url",
+                "gists_url",
+                "gravatar_id",
+                "html_url",
+                "id",
+                "node_id",
+                "login",
+                "organizations_url",
+                "received_events_url",
+                "repos_url",
+                "site_admin",
+                "starred_url",
+                "subscriptions_url",
+                "type",
+                "url"
+              ]
+            },
+            {
+              "description": "An enterprise on GitHub.",
+              "type": "object",
+              "properties": {
+                "description": {
+                  "description": "A short description of the enterprise.",
+                  "type": "string"
+                },
+                "htmlUrl": {
+                  "type": "string"
+                },
+                "websiteUrl": {
+                  "description": "The enterprise's website URL.",
+                  "type": "string"
+                },
+                "id": {
+                  "description": "Unique identifier of the enterprise",
+                  "type": "integer"
+                },
+                "nodeId": {
+                  "type": "string"
+                },
+                "name": {
+                  "description": "The name of the enterprise.",
+                  "type": "string"
+                },
+                "slug": {
+                  "description": "The slug url identifier for the enterprise.",
+                  "type": "string"
+                },
+                "createdAt": {
+                  "type": "string"
+                },
+                "updatedAt": {
+                  "type": "string"
+                },
+                "avatarUrl": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "node_id",
+                "name",
+                "slug",
+                "html_url",
+                "created_at",
+                "updated_at",
+                "avatar_url"
+              ]
+            }
+          ]
+        },
+        "name": {
+          "description": "The name of the GitHub app",
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "externalUrl": {
+          "type": "string"
+        },
+        "htmlUrl": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "string"
+        },
+        "updatedAt": {
+          "type": "string"
+        },
+        "permissions": {
+          "description": "The set of permissions for the GitHub app",
+          "type": "object",
+          "properties": {
+            "issues": {
+              "type": "string"
+            },
+            "checks": {
+              "type": "string"
+            },
+            "metadata": {
+              "type": "string"
+            },
+            "contents": {
+              "type": "string"
+            },
+            "deployments": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "events": {
+          "description": "The list of events for the GitHub app",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "installationsCount": {
+          "description": "The number of installations associated with the GitHub app",
+          "type": "integer"
+        },
+        "clientSecret": {
+          "type": "string"
+        },
+        "webhookSecret": {
+          "type": "string"
+        },
+        "pem": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "node_id",
+        "owner",
+        "name",
+        "description",
+        "external_url",
+        "html_url",
+        "created_at",
+        "updated_at",
+        "permissions",
+        "events"
+      ]
+    },
+    "reactions": {
+      "type": "object",
+      "properties": {
+        "url": {
+          "type": "string"
+        },
+        "totalCount": {
+          "type": "integer"
+        },
+        "+1": {
+          "type": "integer"
+        },
+        "-1": {
+          "type": "integer"
+        },
+        "laugh": {
+          "type": "integer"
+        },
+        "confused": {
+          "type": "integer"
+        },
+        "heart": {
+          "type": "integer"
+        },
+        "hooray": {
+          "type": "integer"
+        },
+        "eyes": {
+          "type": "integer"
+        },
+        "rocket": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "url",
+        "total_count",
+        "+1",
+        "-1",
+        "laugh",
+        "confused",
+        "heart",
+        "hooray",
+        "eyes",
+        "rocket"
+      ]
+    }
+  },
+  "required": [
+    "id",
+    "node_id",
+    "html_url",
+    "issue_url",
+    "author_association",
+    "user",
+    "url",
+    "created_at",
+    "updated_at"
+  ]
+}

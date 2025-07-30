@@ -1,0 +1,421 @@
+{
+  "description": "Commit",
+  "type": "object",
+  "properties": {
+    "url": {
+      "type": "string"
+    },
+    "sha": {
+      "type": "string"
+    },
+    "nodeId": {
+      "type": "string"
+    },
+    "htmlUrl": {
+      "type": "string"
+    },
+    "commentsUrl": {
+      "type": "string"
+    },
+    "commit": {
+      "type": "object",
+      "properties": {
+        "url": {
+          "type": "string"
+        },
+        "author": {
+          "description": "Metaproperties for Git author/committer information.",
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "date": {
+              "type": "string"
+            }
+          }
+        },
+        "committer": {
+          "description": "Metaproperties for Git author/committer information.",
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "date": {
+              "type": "string"
+            }
+          }
+        },
+        "message": {
+          "type": "string"
+        },
+        "commentCount": {
+          "type": "integer"
+        },
+        "tree": {
+          "type": "object",
+          "properties": {
+            "sha": {
+              "type": "string"
+            },
+            "url": {
+              "type": "string"
+            }
+          },
+          "required": ["sha", "url"]
+        },
+        "verification": {
+          "type": "object",
+          "properties": {
+            "verified": {
+              "type": "boolean"
+            },
+            "reason": {
+              "type": "string"
+            },
+            "payload": {
+              "type": "string"
+            },
+            "signature": {
+              "type": "string"
+            },
+            "verifiedAt": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "verified",
+            "reason",
+            "payload",
+            "signature",
+            "verified_at"
+          ]
+        }
+      },
+      "required": [
+        "author",
+        "committer",
+        "comment_count",
+        "message",
+        "tree",
+        "url"
+      ]
+    },
+    "author": {
+      "oneOf": [
+        {
+          "description": "A GitHub user.",
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "login": {
+              "type": "string"
+            },
+            "id": {
+              "type": "integer"
+            },
+            "nodeId": {
+              "type": "string"
+            },
+            "avatarUrl": {
+              "type": "string"
+            },
+            "gravatarId": {
+              "type": "string"
+            },
+            "url": {
+              "type": "string"
+            },
+            "htmlUrl": {
+              "type": "string"
+            },
+            "followersUrl": {
+              "type": "string"
+            },
+            "followingUrl": {
+              "type": "string"
+            },
+            "gistsUrl": {
+              "type": "string"
+            },
+            "starredUrl": {
+              "type": "string"
+            },
+            "subscriptionsUrl": {
+              "type": "string"
+            },
+            "organizationsUrl": {
+              "type": "string"
+            },
+            "reposUrl": {
+              "type": "string"
+            },
+            "eventsUrl": {
+              "type": "string"
+            },
+            "receivedEventsUrl": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            },
+            "siteAdmin": {
+              "type": "boolean"
+            },
+            "starredAt": {
+              "type": "string"
+            },
+            "userViewType": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "avatar_url",
+            "events_url",
+            "followers_url",
+            "following_url",
+            "gists_url",
+            "gravatar_id",
+            "html_url",
+            "id",
+            "node_id",
+            "login",
+            "organizations_url",
+            "received_events_url",
+            "repos_url",
+            "site_admin",
+            "starred_url",
+            "subscriptions_url",
+            "type",
+            "url"
+          ]
+        },
+        {
+          "description": "An object without any properties.",
+          "type": "object",
+          "properties": {},
+          "additionalProperties": false
+        }
+      ]
+    },
+    "committer": {
+      "oneOf": [
+        {
+          "description": "A GitHub user.",
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            },
+            "login": {
+              "type": "string"
+            },
+            "id": {
+              "type": "integer"
+            },
+            "nodeId": {
+              "type": "string"
+            },
+            "avatarUrl": {
+              "type": "string"
+            },
+            "gravatarId": {
+              "type": "string"
+            },
+            "url": {
+              "type": "string"
+            },
+            "htmlUrl": {
+              "type": "string"
+            },
+            "followersUrl": {
+              "type": "string"
+            },
+            "followingUrl": {
+              "type": "string"
+            },
+            "gistsUrl": {
+              "type": "string"
+            },
+            "starredUrl": {
+              "type": "string"
+            },
+            "subscriptionsUrl": {
+              "type": "string"
+            },
+            "organizationsUrl": {
+              "type": "string"
+            },
+            "reposUrl": {
+              "type": "string"
+            },
+            "eventsUrl": {
+              "type": "string"
+            },
+            "receivedEventsUrl": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            },
+            "siteAdmin": {
+              "type": "boolean"
+            },
+            "starredAt": {
+              "type": "string"
+            },
+            "userViewType": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "avatar_url",
+            "events_url",
+            "followers_url",
+            "following_url",
+            "gists_url",
+            "gravatar_id",
+            "html_url",
+            "id",
+            "node_id",
+            "login",
+            "organizations_url",
+            "received_events_url",
+            "repos_url",
+            "site_admin",
+            "starred_url",
+            "subscriptions_url",
+            "type",
+            "url"
+          ]
+        },
+        {
+          "description": "An object without any properties.",
+          "type": "object",
+          "properties": {},
+          "additionalProperties": false
+        }
+      ]
+    },
+    "parents": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "sha": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "htmlUrl": {
+            "type": "string"
+          }
+        },
+        "required": ["sha", "url"]
+      }
+    },
+    "stats": {
+      "type": "object",
+      "properties": {
+        "additions": {
+          "type": "integer"
+        },
+        "deletions": {
+          "type": "integer"
+        },
+        "total": {
+          "type": "integer"
+        }
+      }
+    },
+    "files": {
+      "type": "array",
+      "items": {
+        "description": "Diff Entry",
+        "type": "object",
+        "properties": {
+          "sha": {
+            "type": "string"
+          },
+          "filename": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "added",
+              "removed",
+              "modified",
+              "renamed",
+              "copied",
+              "changed",
+              "unchanged"
+            ]
+          },
+          "additions": {
+            "type": "integer"
+          },
+          "deletions": {
+            "type": "integer"
+          },
+          "changes": {
+            "type": "integer"
+          },
+          "blobUrl": {
+            "type": "string"
+          },
+          "rawUrl": {
+            "type": "string"
+          },
+          "contentsUrl": {
+            "type": "string"
+          },
+          "patch": {
+            "type": "string"
+          },
+          "previousFilename": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "additions",
+          "blob_url",
+          "changes",
+          "contents_url",
+          "deletions",
+          "filename",
+          "raw_url",
+          "sha",
+          "status"
+        ]
+      }
+    }
+  },
+  "required": [
+    "url",
+    "sha",
+    "node_id",
+    "html_url",
+    "comments_url",
+    "commit",
+    "author",
+    "committer",
+    "parents"
+  ]
+}
