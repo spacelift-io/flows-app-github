@@ -101,6 +101,8 @@ const EVENT_CONFIG: Record<SupportedEventType, EventConfig> = {
   },
 };
 
+const createGitHubAppPromptKey = "create-github-app-prompt";
+
 export const app = defineApp({
   blocks: {
     createBranch,
@@ -254,7 +256,7 @@ export const app = defineApp({
               value: data.repositories.map((repo) => repo.full_name),
             });
 
-            await lifecycle.prompt.delete(value.promptId);
+            await lifecycle.prompt.delete(createGitHubAppPromptKey);
 
             await kv.app.delete(["manifest"]);
 
@@ -408,7 +410,8 @@ export const app = defineApp({
         url: "https://spaceflows.io",
       };
 
-      const promptId = await lifecycle.prompt.create(
+      await lifecycle.prompt.create(
+        createGitHubAppPromptKey,
         "Create a new app GitHub App",
         {
           redirect: {
@@ -427,7 +430,6 @@ export const app = defineApp({
       await kv.app.set({
         key: "manifest",
         value: {
-          promptId,
           state,
         },
       });
