@@ -57,15 +57,6 @@ export const dispatchWorkflow = defineGitHubBlock({
     const octokit = await getGitHubInstallation();
     const { owner, repo, workflowId, ref, inputs } = event.inputConfig;
 
-    let parsedInputs: Record<string, unknown> | undefined;
-    if (inputs) {
-      try {
-        parsedInputs = JSON.parse(inputs);
-      } catch {
-        throw new Error("Invalid JSON in inputs");
-      }
-    }
-
     await octokit.request(
       "POST /repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches",
       {
@@ -73,7 +64,7 @@ export const dispatchWorkflow = defineGitHubBlock({
         repo,
         workflow_id: workflowId,
         ref,
-        inputs: parsedInputs,
+        inputs,
       },
     );
 
